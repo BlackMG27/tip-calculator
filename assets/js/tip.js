@@ -13,6 +13,7 @@ function getPercent() {
 document
     .getElementById('tipForm')
     .addEventListener('submit', function (e) {
+        //prevents the
         e.preventDefault();
         getPercent();
         const people = getValue('people');
@@ -20,7 +21,7 @@ document
         //sends the three values to the functions
         totalTips(price, tipPercent);
         totalPrice(price, tipPercent);
-        totalPerson(people, price, tipPercent);
+        tipsPerPerson(people, price, tipPercent);
         amountPerPerson(people, price);
 
     });
@@ -33,20 +34,20 @@ function getValue(id) {
 
 function totalTips(price, percent) {
     const result = price * percent;
-    totalTip.textContent = result.toFixed(2);
+    totalTip.textContent = ` Total tip amount: $${result.toFixed(2)}`;
 }
 
 function totalPrice(price, percent) {
     const totalPrice = parseInt(price) + Number(price * percent);
-    totalAmount.textContent = totalPrice.toFixed(2);
+    totalAmount.textContent = `Meal Price: $${totalPrice.toFixed(2)}`;
 }
 
-function totalPerson(people, price, percent) {
+function tipsPerPerson(people, price, percent) {
     const tipPerson = Number(price * percent) / Number(people);
-    tipPerPerson.textContent = tipPerson.toFixed(2);
+    tipPerPerson.textContent = `Tips per person:  $${tipPerson.toFixed(2)}`;
 }
 
 function amountPerPerson(people, price) {
     const finalAmount = Number(price / people);
-    amountPerson.textContent = finalAmount.toFixed(2);
+    amountPerson.textContent = `Meal price per person:  $${finalAmount.toFixed(2)}`;
 }
