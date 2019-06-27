@@ -41,25 +41,40 @@ function getId(id) {
 function totalTips(price, percent) {
     const result = price * percent;
     totalTip.textContent = ` Total tip amount: $${result.toFixed(2)}`;
+    totalTip
+        .classList
+        .add('animated', 'fadeInUp');
 }
 
 function totalPrice(price, percent) {
     const totalPrice = parseInt(price) + Number(price * percent);
     totalAmount.textContent = `Meal Price: $${totalPrice.toFixed(2)}`;
-}
-
-function tipsPerPerson(people, price, percent) {
-    const tipPerson = Number(price * percent) / Number(people);
-    tipPerPerson.textContent = `Tips per person:  $${tipPerson.toFixed(2)}`;
+    totalAmount
+        .classList
+        .add('animated', 'fadeInUp');
 }
 
 function amountPerPerson(people, price) {
     const finalAmount = Number(price / people);
     amountPerson.textContent = `Meal price per person:  $${finalAmount.toFixed(2)}`;
+    amountPerson
+        .classList
+        .add('animated', 'fadeInUp');
+}
+
+function tipsPerPerson(people, price, percent) {
+    const tipPerson = Number(price * percent) / Number(people);
+    tipPerPerson.textContent = `Tips per person:  $${tipPerson.toFixed(2)}`;
+    tipPerPerson
+        .classList
+        .add('animated', 'fadeInUp');
 }
 
 function totalPerPerson(people, price, percent) {
     let finalAmountPerson = parseInt(price) + Number(price * percent);
     finalAmountPerson = finalAmountPerson / parseInt(people);
     totalPerson.textContent = `Total Amount per person: $${finalAmountPerson.toFixed(2)}`;
+    totalPerson
+        .classList
+        .add('animated', 'fadeInUp');
 }
