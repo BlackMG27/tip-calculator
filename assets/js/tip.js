@@ -20,11 +20,15 @@ document
         const people = getValue('people');
         const price = getValue('price');
         //sends the three values to the functions
-        totalTips(price, tipPercent);
-        totalPrice(price, tipPercent);
-        tipsPerPerson(people, price, tipPercent);
-        amountPerPerson(people, price);
-        totalPerPerson(people, price, tipPercent);
+        if (people > 0 && price > 0 && tipPercent > 0) {
+            totalTips(price, tipPercent);
+            totalPrice(price, tipPercent);
+            tipsPerPerson(people, price, tipPercent);
+            amountPerPerson(people, price);
+            totalPerPerson(people, price, tipPercent);
+        } else {
+            showWarning('Please check your numbers.');
+        }
 
     });
 
@@ -77,4 +81,24 @@ function totalPerPerson(people, price, percent) {
     totalPerson
         .classList
         .add('animated', 'fadeInUp');
+}
+
+function showWarning(error) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error';
+
+    errorDiv.appendChild(document.createTextNode(error));
+
+    const tipForm = getId('tipForm');
+    const tipEntry = getId('tipEntry');
+    tipEntry.insertBefore(errorDiv, tipForm);
+
+    setTimeout(clearError, 4000);
+
+}
+
+function clearError() {
+    document
+        .querySelector('.error')
+        .remove();
 }

@@ -1,0 +1,30 @@
+.container,
+header{
+    width: 900px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+   max-width: 600px;
+   width: 95%;
+   margin: 0 auto;
+}
+
+input{
+    width: 98%;
+}
+
+#tipSubmit{
+    width: 98%;
+    margin-top: 10px;
+
+}
+
+.error{
+    padding: 20px;
+    text-align: center;
+}
