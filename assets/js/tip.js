@@ -67,7 +67,7 @@ function totalTips(price, percent) {
 //gets the total price
 function totalPrice(price, percent) {
     const totalPrice = parseInt(price) + Number(price * percent);
-    totalAmount.textContent = `Meal Price: $${totalPrice.toFixed(2)}`;
+    totalAmount.textContent = `Total Meal Price: $${totalPrice.toFixed(2)}`;
     totalAmount
         .classList
         .add('animated', 'fadeInUp', 'result');

@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Raleway', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #973f3c;
 }
 
 .container,
@@ -13,6 +14,7 @@ header{
 h1{
     text-align: center;
     font-size: 2.25rem;
+    color: #fff7f7;
 }
 
 form,
@@ -28,6 +30,8 @@ input{
     margin-bottom: 10px;
     height: 30px;
     font-size: 18px;
+    background-color: #fffafa;
+    border-radius: 6px;
 }
 
 label{
@@ -42,6 +46,13 @@ label{
     height: 50px;
     border-radius: 6px;
     font-size: 1.125rem;
+    transition: .25s;
+}
+
+#tipSubmit:hover{
+    background-color: #054405;
+    color: #b5f5be;
+    transition: .25s;
 }
 
 .error{
@@ -59,9 +70,15 @@ label{
     border: 1px solid #8a8786;
     font-size: 1.25rem;
     border-radius: 6px;
+    background-color: #fffafa;
 }
 
 #percentage{
     font-size: 1.25rem;
+}
+
+.tip__area{
+    background-color: #fff7f7;
+    padding: 3.5%;
 }
 
